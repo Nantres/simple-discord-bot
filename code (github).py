@@ -13,7 +13,7 @@ from discord.ext import commands,tasks
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
 
-TOKEN = ''    # put your discord server token here, if you dont know how look it up
+TOKEN = ''   # put your discord token here, if you don't know how, look it up
 
 @client.event
 async def on_ready():
@@ -21,7 +21,7 @@ async def on_ready():
   
 @tasks.loop(seconds=5)
 async def send():
-  channel = client.get_channel(904342596887928842)
+  channel = client.get_channel()  #put channel id here, if you don't know how, look it up
   await channel.send(get_count()) 
     
 client.run(TOKEN)
